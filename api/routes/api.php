@@ -21,3 +21,6 @@ $api = app(\Dingo\Api\Routing\Router::class);
 $api->version('v1', function ($api) {
     $api->get('/test/{id}', \App\Http\Controllers\Frontend\TestController::class.'@test');
 });
+$api->version('v3', function ($api) {
+    $api->resource('articles', \App\Http\Controllers\Api\Frontend\ArticleController::class);
+});

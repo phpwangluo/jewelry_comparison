@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Article
- * 
+ *
  * @property int $id
  * @property int $type
  * @property string $title
@@ -85,4 +85,7 @@ class Article extends Model
 		'checker_id',
 		'status'
 	];
+	function article_categories(){
+	    return $this->hasOne(ArticleCategory::class,'article_id','id');
+    }
 }
